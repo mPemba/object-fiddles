@@ -20,7 +20,7 @@ alert(me.name);
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
 var favoriteThings = {
-  band: "alt-j",
+  band: "∆",
   food: "pizza",
   person: "hunter s thompson",
   book: "Walden",
@@ -210,11 +210,12 @@ var user = {
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
-  //Code Here
+user.name = 'Tyler S. McGinnis';
+user.email = 'tyler.mcginnis@devmounta.in';
 
 //Now call the sayName method that's on the user object which will alert the users email
 
-  //Code Here
+user.sayName();
 
 
 
@@ -226,17 +227,22 @@ var user = {
 
 //Create an empty object called methodCollection.
 
-  //Code Here
+var methodCollection = {};
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
-  //Code Here
-
+methodCollection.alertHello = function() {
+  alert('hello');
+}
+methodCollection.logHello = function() {
+  console.log('hello');
+}
 //Now call your alertHello and logHello methods.
 
-  //Code Here
+methodCollection.alertHello();
+methodCollection.logHello();
 
 
 
@@ -276,14 +282,24 @@ var colt = {
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
 
-  //Code Here
+devMountainEmployees.push(tyler);
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
+console.log(devMountainEmployees.length);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absense to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
+var findCahlan = function(array) {
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].name === 'Cahlan') {
+      array.splice(i, 1);
+    }
+  }
+};
 
-
+findCahlan(devMountainEmployees);
 
 
 //NEXT PROBLEM
@@ -323,7 +339,7 @@ of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
-  //Code Here
+var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -336,8 +352,31 @@ var user1 = {
     username: 'infiniateLoop'
 }
 
-//Your Code Here
+var user2 = {
+    name: 'Mike Slayer',
+    email: 'michael@kickassmusic',
+    password: 'myRedneckPast',
+    username: 'pemba'
+}
 
+var user3 = {
+    name: 'Bob Seger',
+    email: 'bob@kickassmusic.com',
+    password: 'nightMoves',
+    username: 'bSeger'
+}
+
+var user4 = {
+    name: 'Neil Young',
+    email: 'neil@kickassmusic.com',
+    password: 'forTheTurnstiles',
+    username: 'nYoung'
+}
+
+users.push(user1);
+users.push(user2);
+users.push(user3);
+users.push(user4);
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
 and those objects contain properties about the specific person you follow.*/
@@ -346,8 +385,14 @@ and those objects contain properties about the specific person you follow.*/
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular indice he's located in, delete him from the array.*/
 
-  //Code Here
-
+var findDude = function(array) {
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].email === 'tylermcginnis33@gmail.com') {
+      array.splice(i, 1);
+    }
+  }
+};
+findDude(users);
 //The activity we just did is very much how data works in 'the real world'.
 
 
