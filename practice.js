@@ -3,8 +3,12 @@
 
 //Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
 
-  //Code here
+var me = {
+  name: "mike slayer",
+  age: 24
+};
 
+alert(me.name);
 
 
 
@@ -15,17 +19,27 @@
 
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
-  //Code here
+var favoriteThings = {
+  band: "alt-j",
+  food: "pizza",
+  person: "hunter s thompson",
+  book: "Walden",
+  movie: "life aquatic",
+  holiday: "labor day"
+};
 
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
-  //Code here
+favoriteThings.car = "bike";
+favoriteThings.brand = "fender";
+
 
 
 //Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'.
 
-  //Code here
+favoriteThings.food = "lettuce";
+favoriteThings.book = "50 shades of rape";
 
 
 
@@ -40,17 +54,20 @@ key (or property) to backPack, using the item variable. Now using dot notation,
 add a key (or property) to your backPack object that is named color, 
 with the value being the color of your backpack. */
 
-  //Code here
+var backPack = {};
+var item = "firstPocket";
+backPack[item] = "chapstick";
+backPack.color = "blue";
 
 //After you do the above, alert your entire backPack object.
 
-  //Code here
+alert(backPack);
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
-  //Code here
+console.log(backPack);
 
 
 
@@ -62,13 +79,26 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create another 'me' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
-  //Code Here
+var me = {
+  name: "mike slayer",
+  age: 24,
+  height: "this tall",
+  gender: "M",
+  married: "nah",
+  eyeColor: "blue/green",
+  hairColor: "brown"
+};
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
-  //Code Here
+var loopMe = function(object) {
+  for (var key in object) {
+    console.log(object[key]);
+    alert(object[key]);
+  }
+};
 
-
+loopMe(me);
 
 
 //NEXT PROBLEM
@@ -78,12 +108,23 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
 
-  //Code Here
+var album = {
+  blue: 4.20,
+  blcksltwhtgld: 5.63,
+  masterpiece: 3.14,
+  liveFree: 4.20,
+  shallBeReleased: 4.32
+};
 
 //Now, loop through your album object alerting every song title individually.
 
-  //Code Here
+var titleLoop = function(record) {
+  for (var key in record) {
+    alert(key);
+  }
+};
 
+titleLoop(album);
 
 
 
@@ -94,12 +135,24 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
-  //Code Here
+var states = {
+  idaho: 342362,
+  utah: 2345325,
+  oregon: 223,
+  arizona: 234523,
+  ohio: 2
+};
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
-  //Code Here
-
+var loopState = function(object) {
+  for (var key in object) {
+    if (object[key] > 30000) {
+      alert(key);
+    }
+  }
+};
+loopState(states);
 
 
 
@@ -119,11 +172,21 @@ var user = {
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
-  //Code Here
+var loopMe = function(object) {
+  for (var key in object) {
+    if (!object[key]) {
+      delete (object[key]);
+    }
+    console.log(object[key]);
+  }
+};
+loopMe(user);
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
-  //Code Here
+user.name = "mike slayer";
+user.pwHash = "ohhLaLa";
+user.username = "pemba";
 
 
 
